@@ -8,7 +8,7 @@ import {
 import { getFinalCoordinates, randomSign } from "./helpers.js";
 
 export function rollDice(dieType, result, damageType, hidden) {
-  const color = COLORS?.[damageType] ?? "#FFFFFF";
+  let color = COLORS?.[damageType] ?? "#FFFFFF";
 
   let textColor = Color.fromString(color).mix(WHITE, 0.6).toString();
   if (dieType === "d20") {
