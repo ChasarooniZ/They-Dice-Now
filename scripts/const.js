@@ -1,4 +1,4 @@
-export const MODULE_ID = "dicerooni";
+export const MODULE_ID = "they-dice-now";
 
 export const COLORS = {
   bludgeoning: "0x3c3c3c",
