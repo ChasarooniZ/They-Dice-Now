@@ -10,7 +10,7 @@
 <!--- [![](https://img.shields.io/badge/ko--fi-donate-%23FF5E5B?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/<Kofi Username>)-->
 
 
-# Dicearooni (Pf2e)
+# Dicearooni, Roll With it (Pf2e)
 
 Basic Sequencer implementation of a Dice rolling animation module. (with some extra support for pf2e)
 
