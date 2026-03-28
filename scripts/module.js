@@ -46,8 +46,7 @@ Hooks.once("ready", async function () {
     }
     console.log({ results });
     const visible =
-      msg.visible &&
-      (msg.whisper.length < 0 || msg.whisper.includes(game.user.id));
+      msg.whisper.length < 0 || msg.whisper.includes(game.user.id);
     for (const r of results) {
       rollDice(r.die, r.value, r.type, !visible);
     }
