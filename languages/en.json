@@ -1,3 +1,40 @@
 {
-    "MODULE.hello": "hello"
+  "dicearooni": {
+    "module-settings": {
+      "dice": {
+        "border": {
+          "enabled": {
+            "name": "Add Dice Borders",
+            "hint": "Adds Dice borders to the render at a bit of performance cost"
+          }
+        },
+        "show-above-ui": {
+          "name": "Show Above UI",
+          "hint": "Show this modules dice and numbers above the UI"
+        },
+        "show-ghost-rolls": {
+          "name": "Show 'Ghost' Rolls",
+          "hint": "Show dice rolling for rolls that the user can't see but don't show them the result"
+        },
+        "size": {
+          "name": "Dice Size",
+          "hint": "Set the size of the dice (1 = 100%)"
+        },
+        "roll-duration": {
+          "name": "Roll Duration",
+          "hint": "How long should the dice roll for in seconds"
+        },
+        "display-duration": {
+          "name": "Display Duration",
+          "hint": "How long should the result be show in seconds"
+        }
+      },
+      "text": {
+        "size": {
+          "name": "Result Size",
+          "hint": "Size of the text result"
+        }
+      }
+    }
+  }
 }

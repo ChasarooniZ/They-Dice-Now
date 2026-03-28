@@ -1,3 +1,5 @@
+export const MODULE_ID = "dicerooni";
+
 export const COLORS = {
   bludgeoning: "0x3c3c3c",
   piercing: "0x3c3c3c",

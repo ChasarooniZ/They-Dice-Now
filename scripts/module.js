@@ -1,14 +1,16 @@
 import { rollDice } from "./animation.js";
+import { registerSettings } from "./settings.js";
 
 Hooks.once("init", async function () {});
 
 Hooks.once("ready", async function () {
+  registerSettings();
   Hooks.on("createChatMessage", async function (msg, _status, userid) {
     const rolls = msg?.rolls;
 
     const results = [];
 
-    if (rolls && msg.visible) {
+    if (rolls) {
       for (const roll of rolls ?? []) {
         if (roll.instances) {
           for (const instance of roll?.instances ?? []) {
@@ -43,8 +45,11 @@ Hooks.once("ready", async function () {
       }
     }
     console.log({ results });
+    const visible =
+      msg.visible &&
+      (msg.whisper.length < 0 || msg.whisper.includes(game.user.id));
     for (const r of results) {
-      rollDice(r.die, r.value, r.type);
+      rollDice(r.die, r.value, r.type, !visible);
     }
   });
 });
