@@ -24,10 +24,12 @@ export function rollDice(dieType, result, damageType, hidden) {
   const aboveUI = game.settings.get(MODULE_ID, "dice.show-above-ui");
   const doBorder = game.settings.get(MODULE_ID, "dice.border.enabled");
   const doGhostDie = game.settings.get(MODULE_ID, "dice.show-ghost-rolls");
-  if (hidden && doGhostDie) {
-    color = "#8a8a8a";
-  } else if (hidden && !doGhostDie) {
-    return;
+  if (hidden) {
+    if (doGhostDie) {
+      color = "#8a8a8a";
+    } else {
+      return;
+    }
   }
 
   const duration = game.settings.get(MODULE_ID, "dice.roll-duration") * 1000;
