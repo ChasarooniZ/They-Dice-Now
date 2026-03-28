@@ -1,3 +1,5 @@
+import { MODULE_ID } from "./const.js";
+
 export function registerSettings() {
   game.settings.register(MODULE_ID, "dice.border.enabled", {
     name: game.i18n.localize(
