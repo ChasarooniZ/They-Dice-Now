@@ -34,7 +34,7 @@ export function registerSettings() {
     ),
     scope: "world",
     config: true,
-    default: false,
+    default: true,
     type: Boolean,
   });
 
