@@ -1,7 +1,50 @@
-Hooks.once('init', async function() {
+import { rollDice } from "./animation.js";
 
-});
+Hooks.once("init", async function () {});
 
-Hooks.once('ready', async function() {
+Hooks.once("ready", async function () {
+  Hooks.on("createChatMessage", async function (msg, _status, userid) {
+    const rolls = msg?.rolls;
 
+    const results = [];
+
+    if (rolls && msg.visible) {
+      for (const roll of rolls ?? []) {
+        if (roll.instances) {
+          for (const instance of roll?.instances ?? []) {
+            const type = instance.type;
+            for (const die of instance?.dice ?? []) {
+              //   console.log({ roll, instance, die });
+              const dieType = `d${die.faces}`;
+              results.push(
+                ...(die?.results ?? []).map((res) => ({
+                  value: res?.result,
+                  active: res?.active,
+                  die: dieType,
+                  type: type,
+                })),
+              );
+            }
+          }
+        } else {
+          for (const die of roll?.dice ?? []) {
+            // console.log({ roll, die });
+            const dieType = `d${die.faces}`;
+            results.push(
+              ...(die?.results ?? []).map((res) => ({
+                value: res?.result,
+                active: res?.active,
+                die: dieType,
+                type: null,
+              })),
+            );
+          }
+        }
+      }
+    }
+    console.log({ results });
+    for (const r of results) {
+      rollDice(r.die, r.value, r.type);
+    }
+  });
 });
