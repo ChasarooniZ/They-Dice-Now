@@ -25,7 +25,7 @@ export function rollDice(dieType, result, damageType, hidden) {
   const doBorder = game.settings.get(MODULE_ID, "dice.border.enabled");
   const doGhostDie = game.settings.get(MODULE_ID, "dice.show-ghost-rolls");
   if (hidden && doGhostDie) {
-    color = "#8a8a8aff";
+    color = "#8a8a8a";
   } else if (hidden && !doGhostDie) {
     return;
   }
