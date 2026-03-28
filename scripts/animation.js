@@ -1,5 +1,5 @@
 import { COLORS, CRIT_FAILURE, CRIT_SUCCESS, WHITE } from "./const.js";
-import { getFinalCoordinates } from "./helpers.js";
+import { getFinalCoordinates, randomSign } from "./helpers.js";
 
 export function rollDice(dieType, result, damageType) {
   const color = COLORS?.[damageType] ?? "#FFFFFF";
