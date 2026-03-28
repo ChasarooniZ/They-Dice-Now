@@ -10,13 +10,15 @@
 <!--- [![](https://img.shields.io/badge/ko--fi-donate-%23FF5E5B?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/<Kofi Username>)-->
 
 
-# They Dice Now
+# Dicearooni (Pf2e)
 
 Basic Sequencer implementation of a Dice rolling animation module. (with some extra support for pf2e)
 
 ## Table of Contents
-- [Changelog](#changelog)
-- [Contributors](#contributors)
+- [Dicearooni (Pf2e)](#dicearooni-pf2e)
+  - [Table of Contents](#table-of-contents)
+  - [Changelog](#changelog)
+  - [Contributors](#contributors)
 
 ## Changelog
 You can access the changelog [here](/CHANGELOG.md).
