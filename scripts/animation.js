@@ -101,7 +101,7 @@ export function rollDice(dieType, result, damageType, hidden) {
         dropShadow: true,
         strokeThickness: 4,
       })
-      .fadeOut(250)
-      .play();
+      .fadeOut(250);
   }
+  seq.play();
 }
