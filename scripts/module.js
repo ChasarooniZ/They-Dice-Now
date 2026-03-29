@@ -6,6 +6,7 @@ Hooks.once("init", async function () {});
 
 Hooks.once("ready", async function () {
   registerSettings();
+  setupAPI();
   setupLandingSpots();
   Hooks.on("createChatMessage", chatMessageDiceRoll);
 });
