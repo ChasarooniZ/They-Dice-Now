@@ -1,4 +1,4 @@
-import { id } from "../module.json";
+import { id } from "../module.json" with { type: "json" };
 
 export const MODULE_ID = id;
 
