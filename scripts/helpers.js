@@ -26,3 +26,32 @@ export function getFinalCoordinates() {
     };
   }
 }
+
+export function setupLandingSpots() {
+  const landingSpots = [];
+  const spotEnd = 0.3;
+  const spotBegin = -0.3;
+  const step = 0.05 * game.settings.get(MODULE_ID, "dice.size");
+  let x = spotBegin;
+  let y = spotBegin;
+  while (x <= spotEnd) {
+    y = spotBegin;
+    while (y <= spotEnd) {
+      landingSpots.push({ x, y });
+      y += step;
+    }
+    x += step;
+  }
+  window.dicearooniLandingSpots = landingSpots;
+  window.dicearooniCurrentLandingSpots = Sequencer.Helpers.shuffle_array(
+    window.dicearooniLandingSpots,
+  );
+}
+
+export function getLandingSpot() {
+  if (window.dicearooniCurrentLandingSpots.length === 0) {
+    window.dicearooniCurrentLandingSpots =
+      Sequencer.Helpers.shuffle_array(landingSpots);
+  }
+  return window.dicearooniCurrentLandingSpots.pop();
+}

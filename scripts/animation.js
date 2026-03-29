@@ -6,7 +6,7 @@ import {
   MODULE_ID,
   WHITE,
 } from "./const.js";
-import { getFinalCoordinates, randomSign } from "./helpers.js";
+import { getFinalCoordinates, getLandingSpot, randomSign } from "./helpers.js";
 
 export function rollDice(dieType, result, damageType, hidden, userColor) {
   let color = COLORS?.[damageType] ?? "#FFFFFF";
@@ -41,10 +41,11 @@ export function rollDice(dieType, result, damageType, hidden, userColor) {
   const degrees = 3 * 360 * randomSign();
 
   const finalCoordinates = getFinalCoordinates();
-  const centerCoordinates = {
-    x: randomSign() * 0.3 * Math.random(),
-    y: randomSign() * 0.3 * Math.random(),
-  };
+  const centerCoordinates = getLandingSpot();
+  // {
+  //   x: randomSign() * 0.3 * Math.random(),
+  //   y: randomSign() * 0.3 * Math.random(),
+  // };
   const centerAnchor = {
     x: 0.5 + centerCoordinates.x,
     y: 0.5 + centerCoordinates.y,
@@ -84,6 +85,7 @@ export function rollDice(dieType, result, damageType, hidden, userColor) {
     seq.filter("Glow", {
       distance: 5,
       outerStrength: 5,
+      innerStrength: 0,
       color: diceBorderColor,
       quality: 0.1,
     });
