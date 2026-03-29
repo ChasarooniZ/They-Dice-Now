@@ -1,6 +1,6 @@
 {
-  "id": "they-dice-now",
-  "title": "They Dice Now! (PF2e)",
+  "id": "dicearooni",
+  "title": "Dicearooni, Roll With it (PF2e)",
   "description": "Adds 2d dice roll visuals (Powered by Sequencer)",
   "version": "#{VERSION}#",
   "library": "false",

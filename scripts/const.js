@@ -1,4 +1,6 @@
-export const MODULE_ID = "they-dice-now";
+import { id } from "../module.json";
+
+export const MODULE_ID = id;
 
 export const COLORS = {
   bludgeoning: "0x3c3c3c",
