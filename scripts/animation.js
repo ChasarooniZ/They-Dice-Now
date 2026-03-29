@@ -1,4 +1,5 @@
 import {
+  BLACK,
   COLORS,
   CRIT_FAILURE,
   CRIT_SUCCESS,
