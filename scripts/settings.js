@@ -108,7 +108,7 @@ export function registerSettings() {
     ),
     scope: "world",
     config: true,
-    default: 2,
+    default: 4,
     range: {
       min: 0,
       step: 0.25,

@@ -1,3 +1,6 @@
+import { rollDice } from "./animation.js";
+import { MODULE_ID } from "./const.js";
+
 export function randomSign() {
   return Math.random() < 0.5 ? -1 : 1;
 }
@@ -27,6 +30,15 @@ export function getFinalCoordinates() {
   }
 }
 
+export function setupAPI() {
+  window.dicearooni = {
+    api: {
+      rollDice,
+    },
+    data: {},
+  };
+}
+
 export function setupLandingSpots() {
   const landingSpots = [];
   const spotEnd = 0.3;
@@ -42,16 +54,16 @@ export function setupLandingSpots() {
     }
     x += step;
   }
-  window.dicearooniLandingSpots = landingSpots;
-  window.dicearooniCurrentLandingSpots = Sequencer.Helpers.shuffle_array(
-    window.dicearooniLandingSpots,
+  window.dicearooni.data.landingSpots = landingSpots;
+  window.dicearooni.data.currentLandingSpots = Sequencer.Helpers.shuffle_array(
+    window.dicearooni.data.landingSpots,
   );
 }
 
 export function getLandingSpot() {
-  if (window.dicearooniCurrentLandingSpots.length === 0) {
-    window.dicearooniCurrentLandingSpots =
-      Sequencer.Helpers.shuffle_array(landingSpots);
+  if (window.dicearooni.data.currentLandingSpots.length === 0) {
+    window.dicearooni.data.currentLandingSpots =
+      Sequencer.Helpers.shuffle_array(window.dicearooni.data.landingSpots);
   }
-  return window.dicearooniCurrentLandingSpots.pop();
+  return window.dicearooni.data.currentLandingSpots.pop();
 }
