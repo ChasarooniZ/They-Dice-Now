@@ -27,6 +27,8 @@ export const COLORS = {
 
 export const WHITE = Color.fromString("0xffffff");
 
+export const BLACK = Color.fromString("0x000000");
+
 export const CRIT_SUCCESS = "#008000";
 
 export const CRIT_FAILURE = "#ff0000";

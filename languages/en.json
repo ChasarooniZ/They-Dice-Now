@@ -6,6 +6,10 @@
           "enabled": {
             "name": "Add Dice Borders",
             "hint": "Adds Dice borders to the render at a bit of performance cost"
+          },
+          "user-color": {
+            "name": "Dice Border - Use Player Color",
+            "hint": "Uses player color to affect dice borders"
           }
         },
         "show-above-ui": {

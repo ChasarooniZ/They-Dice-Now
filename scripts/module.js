@@ -48,7 +48,7 @@ Hooks.once("ready", async function () {
     const visible =
       msg.whisper.length === 0 || msg.whisper.includes(game.user.id);
     for (const r of results) {
-      rollDice(r.die, r.value, r.type, !visible);
+      rollDice(r.die, r.value, r.type, !visible, msg.user?.color);
     }
   });
 });

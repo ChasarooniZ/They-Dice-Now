@@ -10,7 +10,20 @@ export function registerSettings() {
     ),
     scope: "world",
     config: true,
-    default: false,
+    default: true,
+    type: Boolean,
+  });
+
+  game.settings.register(MODULE_ID, "dice.border.user-color", {
+    name: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.border.user-color.name`,
+    ),
+    hint: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.border.user-color.hint`,
+    ),
+    scope: "world",
+    config: true,
+    default: true,
     type: Boolean,
   });
 

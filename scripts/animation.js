@@ -7,10 +7,13 @@ import {
 } from "./const.js";
 import { getFinalCoordinates, randomSign } from "./helpers.js";
 
-export function rollDice(dieType, result, damageType, hidden) {
+export function rollDice(dieType, result, damageType, hidden, userColor) {
   let color = COLORS?.[damageType] ?? "#FFFFFF";
 
   let textColor = Color.fromString(color).mix(WHITE, 0.6).toString();
+  const diceBorderColor = game.settings.get(MODULE_ID, "dice.border.user-color")
+    ? userColor.mix(BLACK, 0.5).toString()
+    : BLACK.toString();
   if (dieType === "d20") {
     if (result === 1) {
       textColor = CRIT_FAILURE;
@@ -80,7 +83,7 @@ export function rollDice(dieType, result, damageType, hidden) {
     seq.filter("Glow", {
       distance: 5,
       outerStrength: 5,
-      color: 0x000000,
+      color: diceBorderColor,
       quality: 0.1,
     });
   }
