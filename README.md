@@ -16,7 +16,7 @@
 
 Basic Sequencer implementation of a Dice rolling animation module. (with some extra support for pf2e)
 
-https://github.com/user-attachments/assets/6a02eb0a-859e-4ecf-84e7-b0bf170b8de1
+https://github.com/user-attachments/assets/8a631b4b-6254-41a8-9b74-32b281f8ddc4
 
 ## Table of Contents
 
