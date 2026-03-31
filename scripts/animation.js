@@ -1,4 +1,11 @@
-import { BLACK, COLORS, MAX_ROLLS, MODULE_ID, WHITE } from "./const.js";
+import {
+  BLACK,
+  COLORS,
+  MAX_ROLLS,
+  MODULE_ID,
+  SUPPORTED_DICE,
+  WHITE,
+} from "./const.js";
 import {
   getDieRollPoint,
   getFinalCoordinates,
@@ -15,8 +22,9 @@ export function rollDice(results, hidden, userColor) {
   const seq = new Sequence();
 
   const dieSize = 0.1 * game.settings.get(MODULE_ID, "dice.size");
-  const textSize = 18 * game.settings.get(MODULE_ID, "text.size");
-  const delayBetween = game.settings.get(MODULE_ID, "dice.delay-between");
+  const textSize = 14 * game.settings.get(MODULE_ID, "text.size");
+  const delayBetween =
+    game.settings.get(MODULE_ID, "dice.delay-between") * 1000;
   const aboveUI = game.settings.get(MODULE_ID, "dice.show-above-ui");
   const avoidWindows = game.settings.get(MODULE_ID, "dice.avoid.windows");
   const avoidDice = game.settings.get(MODULE_ID, "dice.avoid.dice");
@@ -32,6 +40,7 @@ export function rollDice(results, hidden, userColor) {
   const previousPoints = [];
   for (const roll of results) {
     const { value, active, die, type } = roll;
+    if (!SUPPORTED_DICE.has(die)) continue;
     let dieColor = COLORS.DAMAGE_TYPES?.[type] ?? userColor.toString();
     if ((hidden && doGhostDie) || !active) {
       dieColor = COLORS.GHOST_DIE;
@@ -73,6 +82,7 @@ export function rollDice(results, hidden, userColor) {
       .effect()
       .locally()
       .delay(delayBetween * cnt)
+      // .fadeIn(duration)
       .zIndex(0)
       .file(`icons/svg/${die}-grey.svg`)
       .screenSpace()
@@ -114,9 +124,8 @@ export function rollDice(results, hidden, userColor) {
       seq
         .effect()
         .locally()
-        .delay(delayBetween * cnt)
         .zIndex(1)
-        .delay(duration)
+        .delay(duration + delayBetween * cnt)
         .duration(waitTime)
         .screenSpace()
         .screenSpaceAboveUI(aboveUI)

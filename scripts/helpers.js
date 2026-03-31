@@ -100,14 +100,14 @@ function dieResultsHelper(roll, results, type) {
   for (const die of roll ?? []) {
     // console.log({ roll, die });
     const dieType = `d${die.faces}`;
-    results.push(
-      ...(die?.results ?? []).map((res) => ({
+    for (const res of die?.results ?? []) {
+      results.push({
         value: res?.result,
         active: res?.active,
         die: dieType,
-        type: type,
-      })),
-    );
+        type,
+      });
+    }
   }
   return results;
 }
@@ -136,6 +136,7 @@ export function getDieRollPoint({ windows, dice }) {
     window.dicearooni.data.pointCount = 0;
   }
   if (avoidWindows || avoidOtherDice) {
+    const TOO_CLOSE = BASE_DISTANCE * game.settings.get(MODULE_ID, "dice.size");
     while (
       window.dicearooni.data.pointCount <
       window.dicearooni.data.points.length - 1
@@ -147,7 +148,10 @@ export function getDieRollPoint({ windows, dice }) {
         continue;
       }
 
-      if (avoidOtherDice && testIfTooCloseToDice(point, dice)) {
+      if (
+        avoidOtherDice &&
+        testIfTooCloseToDice(point.x, point.y, dice, TOO_CLOSE)
+      ) {
         continue;
       }
 
@@ -188,9 +192,12 @@ function testIfInWindows(point, windows) {
   );
 }
 
-function testIfTooCloseToDice(point, dice) {
-  const TOO_CLOSE = BASE_DISTANCE * game.settings.get(MODULE_ID, "dice.size");
-  return dice?.some(
-    (die) => Math.hypot(die.x - point.x, die.y - point.y) <= TOO_CLOSE,
-  );
+function testIfTooCloseToDice(px, py, dice, TOO_CLOSE) {
+  for (let i = 0; i < dice.length; i++) {
+    const d = dice[i];
+    const dx = d.x - px;
+    const dy = d.y - py;
+    if (dx * dx + dy * dy <= TOO_CLOSE * TOO_CLOSE) return true;
+  }
+  return false;
 }

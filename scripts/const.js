@@ -50,3 +50,5 @@ export const IN_WINDOW = {
     MAX: 0.95,
   },
 };
+
+export const SUPPORTED_DICE = new Set(["d4", "d6", "d8", "d10", "d12", "d20"]);

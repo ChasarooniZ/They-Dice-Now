@@ -1,58 +1,6 @@
 import { MODULE_ID } from "./const.js";
 
 export function registerSettings() {
-  game.settings.register(MODULE_ID, "dice.border.enabled", {
-    name: game.i18n.localize(
-      `${MODULE_ID}.module-settings.dice.border.enabled.name`,
-    ),
-    hint: game.i18n.localize(
-      `${MODULE_ID}.module-settings.dice.border.enabled.hint`,
-    ),
-    scope: "world",
-    config: true,
-    default: false,
-    type: Boolean,
-  });
-
-  game.settings.register(MODULE_ID, "dice.border.user-color", {
-    name: game.i18n.localize(
-      `${MODULE_ID}.module-settings.dice.border.user-color.name`,
-    ),
-    hint: game.i18n.localize(
-      `${MODULE_ID}.module-settings.dice.border.user-color.hint`,
-    ),
-    scope: "world",
-    config: true,
-    default: false,
-    type: Boolean,
-  });
-
-  game.settings.register(MODULE_ID, "dice.show-above-ui", {
-    name: game.i18n.localize(
-      `${MODULE_ID}.module-settings.dice.show-above-ui.name`,
-    ),
-    hint: game.i18n.localize(
-      `${MODULE_ID}.module-settings.dice.show-above-ui.hint`,
-    ),
-    scope: "world",
-    config: true,
-    default: false,
-    type: Boolean,
-  });
-
-  game.settings.register(MODULE_ID, "dice.show-ghost-rolls", {
-    name: game.i18n.localize(
-      `${MODULE_ID}.module-settings.dice.show-ghost-rolls.name`,
-    ),
-    hint: game.i18n.localize(
-      `${MODULE_ID}.module-settings.dice.show-ghost-rolls.hint`,
-    ),
-    scope: "world",
-    config: true,
-    default: true,
-    type: Boolean,
-  });
-
   game.settings.register(MODULE_ID, "dice.size", {
     name: game.i18n.localize(`${MODULE_ID}.module-settings.dice.size.name`),
     hint: game.i18n.localize(`${MODULE_ID}.module-settings.dice.size.hint`),
@@ -79,32 +27,6 @@ export function registerSettings() {
       max: 2,
     },
     type: Number,
-  });
-
-  game.settings.register(MODULE_ID, "dice.avoid.windows", {
-    name: game.i18n.localize(
-      `${MODULE_ID}.module-settings.dice.avoid.windows.name`,
-    ),
-    hint: game.i18n.localize(
-      `${MODULE_ID}.module-settings.dice.avoid.windows.hint`,
-    ),
-    scope: "world",
-    config: true,
-    default: false,
-    type: Boolean,
-  });
-
-  game.settings.register(MODULE_ID, "dice.avoid.dice", {
-    name: game.i18n.localize(
-      `${MODULE_ID}.module-settings.dice.avoid.dice.name`,
-    ),
-    hint: game.i18n.localize(
-      `${MODULE_ID}.module-settings.dice.avoid.dice.hint`,
-    ),
-    scope: "world",
-    config: true,
-    default: true,
-    type: Boolean,
   });
 
   game.settings.register(MODULE_ID, "dice.roll-duration", {
@@ -152,12 +74,90 @@ export function registerSettings() {
     ),
     scope: "world",
     config: true,
-    default: 0.1,
+    default: 0,
     range: {
       min: 0,
-      step: 0.05,
+      step: 0.01,
       max: 1,
     },
     type: Number,
+  });
+
+  game.settings.register(MODULE_ID, "dice.show-above-ui", {
+    name: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.show-above-ui.name`,
+    ),
+    hint: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.show-above-ui.hint`,
+    ),
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean,
+  });
+
+  game.settings.register(MODULE_ID, "dice.show-ghost-rolls", {
+    name: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.show-ghost-rolls.name`,
+    ),
+    hint: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.show-ghost-rolls.hint`,
+    ),
+    scope: "world",
+    config: true,
+    default: true,
+    type: Boolean,
+  });
+
+  game.settings.register(MODULE_ID, "dice.border.enabled", {
+    name: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.border.enabled.name`,
+    ),
+    hint: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.border.enabled.hint`,
+    ),
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean,
+  });
+
+  game.settings.register(MODULE_ID, "dice.border.user-color", {
+    name: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.border.user-color.name`,
+    ),
+    hint: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.border.user-color.hint`,
+    ),
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean,
+  });
+
+  game.settings.register(MODULE_ID, "dice.avoid.windows", {
+    name: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.avoid.windows.name`,
+    ),
+    hint: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.avoid.windows.hint`,
+    ),
+    scope: "world",
+    config: true,
+    default: true,
+    type: Boolean,
+  });
+
+  game.settings.register(MODULE_ID, "dice.avoid.dice", {
+    name: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.avoid.dice.name`,
+    ),
+    hint: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.avoid.dice.hint`,
+    ),
+    scope: "world",
+    config: true,
+    default: true,
+    type: Boolean,
   });
 }

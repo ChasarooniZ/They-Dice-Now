@@ -2,6 +2,16 @@
   "dicearooni": {
     "module-settings": {
       "dice": {
+        "avoid": {
+          "dice": {
+            "name": "Avoid Dice",
+            "hint": "This causes dice to avoid other dice so they don't overlap (within the same roll) for their final location (may have performance costs)"
+          },
+          "windows": {
+            "name": "Avoid Windows",
+            "hint": "This causes dice to avoid windows for their final location (may have performance costs)"
+          }
+        },
         "border": {
           "enabled": {
             "name": "Add Dice Borders",
