@@ -10,11 +10,13 @@
 <!--- replace <your-module-name> with the `name` in your manifest -->
 
 ![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2F<your-module-name>&colorB=4aa94a)
-[![](https://img.shields.io/badge/ko--fi-donate-%23FF5E5B?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/Chasarooni
+[![](https://img.shields.io/badge/ko--fi-donate-%23FF5E5B?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/Chasarooni)
 
 # Dicearooni, Roll With it (Pf2e)
 
 Basic Sequencer implementation of a Dice rolling animation module. (with some extra support for pf2e)
+
+https://github.com/user-attachments/assets/6a02eb0a-859e-4ecf-84e7-b0bf170b8de1
 
 ## Table of Contents
 
@@ -33,6 +35,10 @@ Basic Sequencer implementation of a Dice rolling animation module. (with some ex
   - `Avoid Dice` Option to make the Dice Avoid eachother in the same window
 - **Configurable**
   - Dice Size, Text Size, Roll Duration, Display Duration, Delay between dice, Show Dice above the UI
+ 
+<img width="1605" height="818" alt="image" src="https://github.com/user-attachments/assets/693c57e2-a7cd-4d5a-8cc6-24ff90af793a" />
+<img width="1434" height="767" alt="image" src="https://github.com/user-attachments/assets/7082afd2-35ae-467e-888b-a7e22edddf82" />
+
 
 ## Changelog
 
