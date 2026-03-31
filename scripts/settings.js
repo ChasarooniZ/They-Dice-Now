@@ -10,7 +10,7 @@ export function registerSettings() {
     ),
     scope: "world",
     config: true,
-    default: true,
+    default: false,
     type: Boolean,
   });
 
@@ -23,7 +23,7 @@ export function registerSettings() {
     ),
     scope: "world",
     config: true,
-    default: true,
+    default: false,
     type: Boolean,
   });
 
@@ -81,6 +81,32 @@ export function registerSettings() {
     type: Number,
   });
 
+  game.settings.register(MODULE_ID, "dice.avoid.windows", {
+    name: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.avoid.windows.name`,
+    ),
+    hint: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.avoid.windows.hint`,
+    ),
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean,
+  });
+
+  game.settings.register(MODULE_ID, "dice.avoid.dice", {
+    name: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.avoid.dice.name`,
+    ),
+    hint: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.avoid.dice.hint`,
+    ),
+    scope: "world",
+    config: true,
+    default: true,
+    type: Boolean,
+  });
+
   game.settings.register(MODULE_ID, "dice.roll-duration", {
     name: game.i18n.localize(
       `${MODULE_ID}.module-settings.dice.roll-duration.name`,
@@ -113,6 +139,24 @@ export function registerSettings() {
       min: 0,
       step: 0.25,
       max: 10,
+    },
+    type: Number,
+  });
+
+  game.settings.register(MODULE_ID, "dice.delay-between", {
+    name: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.delay-between.name`,
+    ),
+    hint: game.i18n.localize(
+      `${MODULE_ID}.module-settings.dice.delay-between.hint`,
+    ),
+    scope: "world",
+    config: true,
+    default: 0.1,
+    range: {
+      min: 0,
+      step: 0.05,
+      max: 1,
     },
     type: Number,
   });

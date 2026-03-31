@@ -1,5 +1,5 @@
 {
-  "they-dice-now": {
+  "dicearooni": {
     "module-settings": {
       "dice": {
         "border": {
@@ -31,6 +31,10 @@
         "display-duration": {
           "name": "Display Duration",
           "hint": "How long should the result be show in seconds"
+        },
+        "delay-between": {
+          "name": "Delay Between Dice",
+          "hint": "How long should there be in delay between each dice rolled for a message in seconds"
         }
       },
       "text": {

@@ -1,34 +1,52 @@
 export const MODULE_ID = "dicearooni";
 
 export const COLORS = {
-  bludgeoning: "0x3c3c3c",
-  piercing: "0x3c3c3c",
-  slashing: "0x3c3c3c",
-  acid: "0x007300",
-  bleed: "0x99001a",
-  chaotic: "0xa600a6",
-  cold: "0x2f2fa6",
-  electricity: "#B8860B",
-  evil: "#4B0082",
-  fire: "0xa62f00",
-  force: "0x6300aa",
-  good: "0x9d730a",
-  lawful: "0x402600",
-  mental: "#191970",
-  poison: "0x5b7332",
-  healing: "#90EE90",
-  sonic: "#008B8B",
-  spirit: "0x5a5585",
-  vitality: "0xffffe0",
-  void: "0x00001f",
-  "": "0xffffff",
-  precision: "0xf5bf03",
+  DAMAGE_TYPES: {
+    bludgeoning: "#3c3c3c",
+    piercing: "#3c3c3c",
+    slashing: "#3c3c3c",
+    acid: "#007300",
+    bleed: "#99001a",
+    chaotic: "#a600a6",
+    cold: "#2f2fa6",
+    electricity: "#B8860B",
+    evil: "#4B0082",
+    fire: "#a62f00",
+    force: "#6300aa",
+    good: "#9d730a",
+    lawful: "#402600",
+    mental: "#191970",
+    poison: "#5b7332",
+    healing: "#90EE90",
+    sonic: "#008B8B",
+    spirit: "#5a5585",
+    vitality: "#ffffe0",
+    void: "#00001f",
+    precision: "#f5bf03",
+  },
+  BASIC: {
+    WHITE: "#ffffff",
+    BLACK: "#000000",
+  },
+  GHOST_DIE: "#8a8a8a",
+  CRIT_SUCCESS: "#008000",
+  CRIT_FAILURE: "#ff0000",
+  HIGH_ROLL: "#17dfc4",
 };
 
-export const WHITE = Color.fromString("0xffffff");
+export const WHITE = Color.fromString(COLORS.BASIC.WHITE);
 
-export const BLACK = Color.fromString("0x000000");
+export const BLACK = Color.fromString(COLORS.BASIC.BLACK);
 
-export const CRIT_SUCCESS = "#008000";
+export const MAX_ROLLS = { d4: 4, d6: 6, d8: 8, d10: 10, d12: 12 };
 
-export const CRIT_FAILURE = "#ff0000";
+export const IN_WINDOW = {
+  X: {
+    MIN: 0.05,
+    MAX: 0.75,
+  },
+  Y: {
+    MIN: 0.05,
+    MAX: 0.95,
+  },
+};

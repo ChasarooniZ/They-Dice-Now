@@ -1,5 +1,9 @@
-import { rollDice } from "./animation.js";
-import { setupLandingSpots } from "./helpers.js";
+import {
+  generatePoints,
+  getDiceResults,
+  setupAPI,
+  setupLandingSpots,
+} from "./helpers.js";
 import { registerSettings } from "./settings.js";
 
 Hooks.once("init", async function () {});
@@ -8,52 +12,19 @@ Hooks.once("ready", async function () {
   registerSettings();
   setupAPI();
   setupLandingSpots();
+  generatePoints();
   Hooks.on("createChatMessage", chatMessageDiceRoll);
 });
 
-async function chatMessageDiceRoll(msg, _status, userid) {
+async function chatMessageDiceRoll(msg, _status, _userid) {
+  const start = performance.now();
   const rolls = msg?.rolls;
-
-  const results = [];
-
-  if (rolls) {
-    for (const roll of rolls ?? []) {
-      if (roll.instances) {
-        for (const instance of roll?.instances ?? []) {
-          const type = instance.type;
-          for (const die of instance?.dice ?? []) {
-            //   console.log({ roll, instance, die });
-            const dieType = `d${die.faces}`;
-            results.push(
-              ...(die?.results ?? []).map((res) => ({
-                value: res?.result,
-                active: res?.active,
-                die: dieType,
-                type: type,
-              })),
-            );
-          }
-        }
-      } else {
-        for (const die of roll?.dice ?? []) {
-          // console.log({ roll, die });
-          const dieType = `d${die.faces}`;
-          results.push(
-            ...(die?.results ?? []).map((res) => ({
-              value: res?.result,
-              active: res?.active,
-              die: dieType,
-              type: null,
-            })),
-          );
-        }
-      }
-    }
-  }
-  console.log({ results });
-  const visible =
-    msg.whisper.length === 0 || msg.whisper.includes(game.user.id);
-  for (const r of results) {
-    rollDice(r.die, r.value, r.type, !visible, msg.user?.color);
-  }
+  if (!rolls) return;
+  getDiceResults(
+    rolls,
+    msg.whisper.length === 0 || msg.whisper.includes(game.user.id),
+    msg.user?.color,
+  );
+  const end = performance.now();
+  console.log("MS", end - start);
 }
