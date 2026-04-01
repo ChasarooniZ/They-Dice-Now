@@ -24,6 +24,11 @@
           "minimum": "7.11.0",
           "verified": "7.11.0"
         }
+      },
+
+      {
+        "id": "sf2e",
+        "type": "system"
       }
     ],
     "requires": [

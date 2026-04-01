@@ -13,7 +13,7 @@ Hooks.once("ready", async function () {
   setupAPI();
   setupLandingSpots();
   generatePoints();
-  Hooks.on("createChatMessage", chatMessageDiceRoll);
+  Hooks.on("preCreateChatMessage", chatMessageDiceRoll);
 });
 
 async function chatMessageDiceRoll(msg, _status, _userid) {

@@ -1,3 +1,11 @@
+## Unreleased
+
+## 0.1.1
+
+- **Changes**
+  - Transitioned from ~~`createChatMessage`~~ -> `preCreateChatMessage` to hopefully have the dice show up a little earlier
+  - Added support for sf2e (as in enabled it)
+
 ## 0.1.0
 
 - **Public Release**
