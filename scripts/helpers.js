@@ -100,13 +100,38 @@ function dieResultsHelper(roll, results, type) {
   for (const die of roll ?? []) {
     // console.log({ roll, die });
     const dieType = `d${die.faces}`;
-    for (const res of die?.results ?? []) {
-      results.push({
-        value: res?.result,
-        active: res?.active,
-        die: dieType,
-        type,
-      });
+    const currentDice = die?.results ?? [];
+    if (dieType === "d100") {
+      results.push(
+        ...currentDice.flatMap((dice) => {
+          const first = dice?.result % 10 || 10;
+          const second = Math.floor(dice?.result / 10) || 10;
+          const active = dice?.active;
+          return [
+            {
+              value: first,
+              active: active,
+              die: "d10",
+              type,
+            },
+            {
+              value: second,
+              active: active,
+              die: "d10",
+              type,
+            },
+          ];
+        }),
+      );
+    } else {
+      for (const res of currentDice) {
+        results.push({
+          value: res?.result,
+          active: res?.active,
+          die: dieType,
+          type,
+        });
+      }
     }
   }
   return results;

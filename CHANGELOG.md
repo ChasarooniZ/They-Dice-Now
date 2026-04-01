@@ -1,5 +1,6 @@
 ## Unreleased
-
+- **New**
+  - Support for D100 (💡 @YoSoy-Ed)
 ## 0.1.2
 
 - Fixed bug introduced in `0.1.2` where dice would only show for the Roller (🐛 @Duke)
