@@ -2,7 +2,7 @@
 
 ## 0.1.2
 
-- Fixed bug introduced in `0.1.2` where dice would only show for the Roller (@Duke)
+- Fixed bug introduced in `0.1.2` where dice would only show for the Roller (🐛 @Duke)
 
 ## 0.1.1
 
