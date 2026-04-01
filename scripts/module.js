@@ -22,7 +22,7 @@ async function chatMessageDiceRoll(msg, _status, _userid) {
   getDiceResults(
     rolls,
     (msg.whisper.length === 0 || msg.whisper.includes(game.user.id)) &&
-      game.settings.get("pf2e.metagame_showBreakdowns"),
+      game.settings.get("pf2e", "metagame_showBreakdowns"),
     msg.user?.color,
   );
 }
