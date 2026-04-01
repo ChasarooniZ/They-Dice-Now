@@ -13,11 +13,10 @@ Hooks.once("ready", async function () {
   setupAPI();
   setupLandingSpots();
   generatePoints();
-  Hooks.on("preCreateChatMessage", chatMessageDiceRoll);
+  Hooks.on("createChatMessage", chatMessageDiceRoll);
 });
 
 async function chatMessageDiceRoll(msg, _status, _userid) {
-  const start = performance.now();
   const rolls = msg?.rolls;
   if (!rolls) return;
   getDiceResults(
@@ -25,6 +24,4 @@ async function chatMessageDiceRoll(msg, _status, _userid) {
     msg.whisper.length === 0 || msg.whisper.includes(game.user.id),
     msg.user?.color,
   );
-  const end = performance.now();
-  console.log("MS", end - start);
 }
