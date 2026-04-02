@@ -1,8 +1,12 @@
 ## Unreleased
+
 - **New**
   - Support for D100 (💡 @YoSoy-Ed)
   - Support `Show Roll Breakdowns` PF2e system setting by hiding or ghost moding the dice depending on your module settings (💡 @Duke)
-  - 
+  - Added `PF2e Toolbelt` support
+    - Adds SFX
+  - Added Optional replacement sound effects
+
 ## 0.1.2
 
 - Fixed bug introduced in `0.1.2` where dice would only show for the Roller (🐛 @Duke)

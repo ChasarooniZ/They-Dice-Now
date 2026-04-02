@@ -1,5 +1,5 @@
 import { rollDice } from "./animation.js";
-import { IN_WINDOW, MODULE_ID } from "./const.js";
+import { IN_WINDOW, MODULE_ID, SFX } from "./const.js";
 
 export function randomSign() {
   return Math.random() < 0.5 ? -1 : 1;
@@ -225,4 +225,14 @@ function testIfTooCloseToDice(px, py, dice, TOO_CLOSE) {
     if (dx * dx + dy * dy <= TOO_CLOSE * TOO_CLOSE) return true;
   }
   return false;
+}
+
+export function getSFX(dieCount) {
+  if (dieCount <= 1) {
+    return Sequencer.Helpers.random_array_element(SFX.DICE.SINGLE.VELVET);
+  } else if (dieCount <= 5) {
+    return Sequencer.Helpers.random_array_element(SFX.DICE.FEW.WOOD);
+  } else {
+    return Sequencer.Helpers.random_array_element(SFX.DICE.MANY.WOOD);
+  }
 }

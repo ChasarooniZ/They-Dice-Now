@@ -22,6 +22,14 @@
             "hint": "Uses player color to affect dice borders"
           }
         },
+        "delay-between": {
+          "name": "Delay Between Dice",
+          "hint": "How long should there be in delay between each dice rolled for a message in seconds"
+        },
+        "display-duration": {
+          "name": "Display Duration",
+          "hint": "How long should the result be show in seconds"
+        },
         "show-above-ui": {
           "name": "Show Above UI",
           "hint": "Show this modules dice and numbers above the UI"
@@ -30,6 +38,12 @@
           "name": "Show 'Ghost' Rolls",
           "hint": "Show dice rolling for rolls that the user can't see but don't show them the result"
         },
+        "sfx": {
+          "override": {
+            "name": "Override Default Message SFX for Rolls",
+            "hint": "Overrides the default message sfx for rolls with a relevant randomly selected one from the list of roll sfxs relevant for the amount of dice rolled"
+          }
+        },
         "size": {
           "name": "Dice Size",
           "hint": "Set the size of the dice (1 = 100%)"
@@ -37,14 +51,6 @@
         "roll-duration": {
           "name": "Roll Duration",
           "hint": "How long should the dice roll for in seconds"
-        },
-        "display-duration": {
-          "name": "Display Duration",
-          "hint": "How long should the result be show in seconds"
-        },
-        "delay-between": {
-          "name": "Delay Between Dice",
-          "hint": "How long should there be in delay between each dice rolled for a message in seconds"
         }
       },
       "text": {

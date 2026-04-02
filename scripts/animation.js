@@ -14,7 +14,7 @@ import {
   randomSign,
 } from "./helpers.js";
 
-export function rollDice(results, hidden, userColor) {
+export function rollDice(results, hidden, userColor, sfx = "") {
   const doGhostDie = game.settings.get(MODULE_ID, "dice.show-ghost-rolls");
 
   if (hidden && !doGhostDie) return;
@@ -35,6 +35,11 @@ export function rollDice(results, hidden, userColor) {
 
   const duration = game.settings.get(MODULE_ID, "dice.roll-duration") * 1000;
   const waitTime = game.settings.get(MODULE_ID, "dice.display-duration") * 1000;
+
+  // This is entirely for toolbelt
+  if (sfx) {
+    seq.sound().file(sfx);
+  }
 
   let cnt = 0;
   const previousPoints = [];

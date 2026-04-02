@@ -52,3 +52,31 @@ export const IN_WINDOW = {
 };
 
 export const SUPPORTED_DICE = new Set(["d4", "d6", "d8", "d10", "d12", "d20"]);
+
+export const SFX = {
+  DICE: {
+    SINGLE: {
+      VELVET: [
+        "modules/dicearooni/assets/sfx/dice/velvet/velvet_1.ogg",
+        "modules/dicearooni/assets/sfx/dice/velvet/velvet_2.ogg",
+        "modules/dicearooni/assets/sfx/dice/velvet/velvet_3.ogg",
+        "modules/dicearooni/assets/sfx/dice/velvet/velvet_4.ogg",
+      ],
+    },
+    FEW: {
+      WOOD: [
+        "modules/dicearooni/assets/sfx/dice/wood/few_1.ogg",
+        "modules/dicearooni/assets/sfx/dice/wood/few_2.ogg",
+        "modules/dicearooni/assets/sfx/dice/wood/few_3.ogg",
+      ],
+    },
+    MANY: {
+      WOOD: [
+        "modules/dicearooni/assets/sfx/dice/wood/many_1.ogg",
+        "modules/dicearooni/assets/sfx/dice/wood/many_2.ogg",
+        "modules/dicearooni/assets/sfx/dice/wood/many_3.ogg",
+        "modules/dicearooni/assets/sfx/dice/wood/many_4.ogg",
+      ],
+    },
+  },
+};

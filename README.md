@@ -25,6 +25,7 @@ https://github.com/user-attachments/assets/8a631b4b-6254-41a8-9b74-32b281f8ddc4
   - [Features](#features)
   - [Changelog](#changelog)
   - [Contributors](#contributors)
+  - [Source](#source)
 
 ## Features
 
@@ -35,10 +36,9 @@ https://github.com/user-attachments/assets/8a631b4b-6254-41a8-9b74-32b281f8ddc4
   - `Avoid Dice` Option to make the Dice Avoid eachother in the same window
 - **Configurable**
   - Dice Size, Text Size, Roll Duration, Display Duration, Delay between dice, Show Dice above the UI
- 
+
 <img width="1605" height="818" alt="image" src="https://github.com/user-attachments/assets/693c57e2-a7cd-4d5a-8cc6-24ff90af793a" />
 <img width="1434" height="767" alt="image" src="https://github.com/user-attachments/assets/7082afd2-35ae-467e-888b-a7e22edddf82" />
-
 
 ## Changelog
 
@@ -47,3 +47,7 @@ You can access the changelog [here](/CHANGELOG.md).
 ## Contributors
 
 You can see everyone else who contributed to the module [here](CONTRIBUTORS.md)
+
+## Source
+
+- Sounds royalty free from `Ovani Sounds` (only usable with this module, license is non transferrable)
