@@ -1,4 +1,4 @@
-## Unreleased
+## 0.2.0
 
 - **New**
   - Support for D100 (💡 @YoSoy-Ed)
