@@ -42,6 +42,14 @@
           "override": {
             "name": "Override Default Message SFX for Rolls",
             "hint": "Overrides the default message sfx for rolls with a relevant randomly selected one from the list of roll sfxs relevant for the amount of dice rolled"
+          },
+          "theme": {
+            "name": "Override SFX Theme",
+            "hint": "Choose the theme of the sound effects (IE what soundpack) to be improved a later time",
+            "choices": {
+              "original": "Original",
+              "cinema": "'Cinema'"
+            }
           }
         },
         "size": {

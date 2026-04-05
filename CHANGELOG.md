@@ -1,3 +1,10 @@
+## 0.2.1
+
+- **New**
+  - Added SFX themes to choose when replacing the default SFX
+- **Updated**
+  - Fixed bug causing the sounds to not be packaged with the previous release
+
 ## 0.2.0
 
 - **New**

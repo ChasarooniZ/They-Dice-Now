@@ -109,7 +109,7 @@ export function registerSettings() {
     type: Boolean,
   });
 
-   game.settings.register(MODULE_ID, "dice.sfx.override", {
+  game.settings.register(MODULE_ID, "dice.sfx.override", {
     name: game.i18n.localize(
       `${MODULE_ID}.module-settings.dice.sfx.override.name`,
     ),
@@ -120,6 +120,19 @@ export function registerSettings() {
     config: true,
     default: true,
     type: Boolean,
+  });
+
+  game.settings.register(MODULE_ID, "dice.sfx.theme", {
+    name: game.i18n.localize(`${MODULE_ID}.module-settings.dice.sfx.theme.name`),
+    hint: game.i18n.localize(`${MODULE_ID}.module-settings.dice.sfx.theme.hint`),
+    scope: "world",
+    config: true,
+    default: "original",
+    type: String,
+    choices: {
+      original: `${MODULE_ID}.module-settings.dice.sfx.theme.choices.original`,
+      cinema: `${MODULE_ID}.module-settings.dice.sfx.theme.choices.cinema`,
+    },
   });
 
   game.settings.register(MODULE_ID, "dice.border.enabled", {

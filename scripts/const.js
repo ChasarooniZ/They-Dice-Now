@@ -78,5 +78,6 @@ export const SFX = {
         "modules/dicearooni/assets/sfx/dice/wood/many_4.ogg",
       ],
     },
+    CINEMA: ["modules/dicearooni/assets/sfx/cinema/DiceSFX.ogg"],
   },
 };

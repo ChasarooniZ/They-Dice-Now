@@ -228,11 +228,17 @@ function testIfTooCloseToDice(px, py, dice, TOO_CLOSE) {
 }
 
 export function getSFX(dieCount) {
-  if (dieCount <= 1) {
-    return Sequencer.Helpers.random_array_element(SFX.DICE.SINGLE.VELVET);
-  } else if (dieCount <= 5) {
-    return Sequencer.Helpers.random_array_element(SFX.DICE.FEW.WOOD);
-  } else {
-    return Sequencer.Helpers.random_array_element(SFX.DICE.MANY.WOOD);
+  const theme = game.settings.get(MODULE_ID, "dice.sfx.theme");
+  switch (theme) {
+    case "original":
+      if (dieCount <= 1) {
+        return Sequencer.Helpers.random_array_element(SFX.DICE.SINGLE.VELVET);
+      } else if (dieCount <= 5) {
+        return Sequencer.Helpers.random_array_element(SFX.DICE.FEW.WOOD);
+      } else {
+        return Sequencer.Helpers.random_array_element(SFX.DICE.MANY.WOOD);
+      }
+    case "cinema":
+      return SFX.DICE.CINEMA[0];
   }
 }

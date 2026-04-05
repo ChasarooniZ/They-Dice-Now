@@ -51,3 +51,5 @@ You can see everyone else who contributed to the module [here](CONTRIBUTORS.md)
 ## Source
 
 - Sounds royalty free from `Ovani Sounds` (only usable with this module, license is non transferrable)
+- "Cinema" dice sounds `Simon Magnus`
+  - Reviewers say "It's like i'm really rolling dice"
