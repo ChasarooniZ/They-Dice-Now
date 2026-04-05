@@ -3,7 +3,7 @@
 - **New**
   - Added SFX themes to choose when replacing the default SFX
 - **Updated**
-  - Fixed bug causing the sounds to not be packaged with the previous release
+  - Fixed bug causing the sounds to not be packaged with the previous release (🐛 @Duke)
 
 ## 0.2.0
 
